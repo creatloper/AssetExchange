@@ -1,0 +1,46 @@
+<html> 
+
+<head> 
+<title>Send Mail</title> 
+<script src= 
+	"https://smtpjs.com/v3/smtp.js"> 
+</script> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+	
+	function sendEmail() {
+		const mail = document.getElementById('email').value;
+	Email.send({ 
+		Host: "smtp.gmail.com", 
+		Username: "assetexchange227@gmail.com", 
+		Password: "Engineer$$Project", 
+		To: mail, 
+		From: "assetexchange227@gmail.com", 
+		Subject: "Atomic Asset Exchange", 
+		Body: "Well that was easy!!", 
+	}) 
+		.then(function (message) { 
+		console.log(message)
+		alert("mail sent successfully") 
+		}); 
+	} 
+</script> 
+</head> 
+
+<body> 
+<form method="post">  
+    
+	<div class="form-group">
+      <label for="email">Email Id of Receiver:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email id" name="email">
+    </div>
+	
+	<input class="btn btn-primary" type="button" value="Send Email" onclick="sendEmail()" />
+
+</form>
+</body> 
+
+</html> 

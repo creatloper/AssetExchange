@@ -1,0 +1,21 @@
+just like metamask for ethereum , we have tronmask from tron blockchain
+
+
+
+//to sign the transaction without private key
+web3.eth.personal.unlockAccount(account number, password, time for which the 
+ account is to be unlocked).then(console.log('Account unlocked!'));
+var txObject = {
+        nonce:    web3.utils.toHex(txCount),
+		from:	  account1,
+        to:       account2,
+        data:     functionAbi,
+        gasLimit: web3.utils.toHex(2100000),
+        gasPrice: web3.utils.toHex(web3.utils.toWei('10', 'gwei'))
+     }
+web3.eth.signTransaction(txObject, addressOfSender).then(result => {console.log(result.raw)})
+//result.raw is the entity used for sending signed transaction(broadcasting)
+
+
+
+another way of signing transaction using metamask is to use the sendTransaction() method it ask to sign the transaction on metamask itself whenever the transaction is initiated
